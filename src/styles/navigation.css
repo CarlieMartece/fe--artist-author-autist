@@ -1,0 +1,42 @@
+.hexagon {
+  /* background-color: black; */
+  color: aliceblue;
+  float: right;
+  font-size: 92px;
+  margin: -31px 10px 0 0;
+  padding: 0;
+  transform: rotate(-30deg);
+}
+
+#Header {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  grid-template-rows: 110px 1fr;
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+#Logo {
+  /* background-color: rgb(255, 0, 0); */
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+#Logo img {
+  filter: brightness(70%);
+  margin-left: 5px;
+  width: 100px;
+}
+
+#NavBar {
+  /* background-color: blueviolet; */
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  grid-area: 1 / 2 / 3 / 3;
+  justify-content: right;
+}
+
+.nav-section {
+  /* background-color: aqua; */
+  height: 60px;
+}
