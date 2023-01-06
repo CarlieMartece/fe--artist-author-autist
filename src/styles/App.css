@@ -10,6 +10,13 @@
 .App {
   background-color: black;
   color: white;
+  display: flex;
+  flex-direction: column;
   height: 100vh;
+  padding: 5px;
   text-align: left;
+}
+
+h1 {
+  font-size: 1.4em;
 }

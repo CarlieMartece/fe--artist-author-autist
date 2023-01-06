@@ -1,52 +1,58 @@
 .hexagon {
-  /* background-color: black; */
+  border: 5px solid transparent;
   float: left;
-  max-width:33%;
-  width: 85px;
+  height: 50px;
+  max-width: 33%;
+  width: 50px;
 }
 
 .hexagon img {
-    height: 50px;
-    padding: 6px 0;
+  height: 50px;
+  padding: 6px 0 0 0;
+  width: 50px;
 }
 
 #Header {
-  display: grid;
-  grid-template-columns: 110px 1fr;
-  grid-template-rows: 110px 1fr;
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  display: block;
+  margin-bottom: 14px;
 }
 
 #Logo {
-  /* background-color: rgb(255, 0, 0); */
-  grid-area: 1 / 1 / 2 / 2;
+  float: left;
 }
 
 #Logo img {
-  margin-left: 5px;
-  width: 100px;
+  margin: 0 5px;
+  width: 90px;
 }
 
-#NavBar {
-  /* background-color: blueviolet; */
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  grid-area: 1 / 2 / 2 / 3;
-  justify-content: left;
+#NavSite {
+  float: left;
 }
 
-#nav-social-one {
-    margin-right: 10px;
+.nav-site-link {
+    display: inline;
+    margin: 3px 26px;
+}
+
+#NavSocial {
+  display: block;
 }
 
 #nav-social-two {
-    float:right;
-    margin: -32px -32px 0 0;
+  margin-left: 31px;
 }
 
 .nav-section {
-  /* background-color: aqua; */
-  height: 60px;
+  float: left;
+  height: 50px;
+}
+
+#title {
+    float: left;
+    width: 100%;
+}
+
+#welcome {
+    float: left;
 }

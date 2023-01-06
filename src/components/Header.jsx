@@ -6,7 +6,7 @@ export default function Header() {
   return (
     <div id="Header">
       <Logo />
-      <NavBar />
+      <NavSocial />
     </div>
   );
 }
@@ -23,13 +23,4 @@ const Logo = () => {
     </div>
   );
 };
-
-const NavBar = () => {
-  return (
-    <div id="NavBar">
-      <NavSocial />
-    </div>
-  );
-};
-
 
