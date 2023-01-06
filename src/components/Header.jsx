@@ -1,16 +1,15 @@
 import { Link } from "react-router-dom";
 import "../styles/navigation.css";
+import NavSocial from "./NavSocial";
 
-
-export default function Header () {
-    return (
-      <div id="Header">
-        <Logo />
-        <NavBar />
-      </div>
-    );
-};
-
+export default function Header() {
+  return (
+    <div id="Header">
+      <Logo />
+      <NavBar />
+    </div>
+  );
+}
 
 const Logo = () => {
   return (
@@ -22,9 +21,8 @@ const Logo = () => {
         />
       </Link>
     </div>
-  )
-}
-
+  );
+};
 
 const NavBar = () => {
   return (
@@ -32,13 +30,6 @@ const NavBar = () => {
       <NavSocial />
     </div>
   );
-}
+};
 
 
-const NavSocial = () => {
-  return (
-    <nav className="nav-section">
-      <div className="hexagon"><span>&#x2B22;</span></div>
-    </nav>
-  );
-}

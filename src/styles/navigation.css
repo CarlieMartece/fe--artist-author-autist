@@ -1,11 +1,13 @@
 .hexagon {
   /* background-color: black; */
-  color: aliceblue;
   float: right;
-  font-size: 92px;
-  margin: -31px 10px 0 0;
-  padding: 0;
-  transform: rotate(-30deg);
+  max-width:33%;
+  width: 85px;
+}
+
+.hexagon img {
+    height: 50px;
+    padding: 6px 0;
 }
 
 #Header {
@@ -22,7 +24,6 @@
 }
 
 #Logo img {
-  filter: brightness(70%);
   margin-left: 5px;
   width: 100px;
 }
@@ -34,6 +35,10 @@
   flex-wrap: wrap;
   grid-area: 1 / 2 / 3 / 3;
   justify-content: right;
+}
+
+#NavSocial {
+    margin-right: 10px;
 }
 
 .nav-section {
