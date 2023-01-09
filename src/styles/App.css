@@ -1,10 +1,11 @@
 * {
-  margin: 0;
-  padding: 0;
-  border: 0;
-  outline: 0;
-  vertical-align: baseline;
   background: transparent;
+  border: 0;
+  margin: 0;
+  outline: 0;
+  overflow: hidden;
+  padding: 0;
+  vertical-align: baseline;
 }
 
 .App {
@@ -12,23 +13,48 @@
   color: white;
   display: grid;
   height: 100vh;
-  grid-template-columns: 1fr;
-  grid-template-rows: 120px 80px 1fr;
+  grid-template-columns: 100%;
+  grid-template-rows: 112px 60px 1fr;
   grid-column-gap: 10px;
   grid-row-gap: 0px;
   margin: 0;
-  padding: 2vw;
+  padding: 2%;
   text-align: left;
-  width: 100vh;
+  width: 100%;
 }
 
 h1 {
   font-size: 1.4em;
 }
 
+h2 {
+  font-size: 1.2em;
+}
+
+.main {
+  /* background-color: violet; */
+  grid-area: 3 / 1 / 4 / 2;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  width: 96%;
+}
+
+p {
+  margin-top: 14px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 @media screen and (min-width: 800px) {
-  App {
+  .App {
     grid-template-columns: 314px 1fr;
     grid-template-rows: 120px 1fr;
+  }
+  .main { 
+    grid-area: 2 / 1 / 3 / 3;
   }
 }
