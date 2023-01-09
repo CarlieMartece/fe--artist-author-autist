@@ -8,8 +8,8 @@ export default function NavSocial() {
   ];
 
   return (
-    <nav className="NavSocial">
-      <div className="nav-section" id="nav-social-one">
+    <nav id="NavSocial">
+      <div className="nav-section">
         {socialArray.map((platform) => {
           return (
             <ExternalLink href={platform[0]}>

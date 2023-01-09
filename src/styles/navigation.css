@@ -13,8 +13,10 @@
 }
 
 #Header {
-  display: block;
-  margin-bottom: 14px;
+  /* background-color: blueviolet; */
+  grid-area: 1 / 1 / 2 / 2;
+  margin: 0 0 14px;
+  width: 314px
 }
 
 #Logo {
@@ -26,18 +28,27 @@
   width: 90px;
 }
 
+/* #nav-portfolio {
+  width: 200px;
+} */
+
 #NavSite {
-  float: left;
+  /* background-color: aqua; */
+  grid-area: 2 / 1 / 3 / 2;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  width: 96vw;
 }
 
 .nav-site-link {
     display: inline;
-    margin: 3px 26px;
+    margin: 3px 14px;
 }
 
-#NavSocial {
+/* #NavSocial {
   display: block;
-}
+} */
 
 #nav-social-two {
   margin-left: 31px;
@@ -48,11 +59,13 @@
   height: 50px;
 }
 
-#title {
-    float: left;
-    width: 100%;
-}
+/* #title {
+  width: 200px;
+} */
 
-#welcome {
-    float: left;
+@media screen and (min-width: 800px) {
+  #NavSite {
+    grid-area: 1 / 2 / 2 / 3;
+    width: 486px;
+  }
 }

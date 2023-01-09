@@ -10,13 +10,25 @@
 .App {
   background-color: black;
   color: white;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   height: 100vh;
-  padding: 5px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 120px 80px 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 0px;
+  margin: 0;
+  padding: 2vw;
   text-align: left;
+  width: 100vh;
 }
 
 h1 {
   font-size: 1.4em;
+}
+
+@media screen and (min-width: 800px) {
+  App {
+    grid-template-columns: 314px 1fr;
+    grid-template-rows: 120px 1fr;
+  }
 }
