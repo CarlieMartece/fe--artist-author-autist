@@ -16,6 +16,7 @@ export default function NavSocial() {
               <div className="hexagon">
                 <img
                   alt={`${platform[1]}-link`}
+                  key={platform[1]}
                   src={require(`../images/layout/logo-${platform[2]}-100.png`)}
                 />
               </div>
@@ -24,11 +25,12 @@ export default function NavSocial() {
         })}
       </div>
       <div className="nav-section" id="nav-social-two">
-        {socialArray.map(() => {
+        {socialArray.map((platform) => {
           return (
             <div className="hexagon">
               <img
                 alt="placeholder"
+                key={platform[1]}
                 src={require(`../images/layout/placeholder-hex-100.png`)}
               />
             </div>

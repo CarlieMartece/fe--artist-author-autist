@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import "../styles/Introduction.css";
+
 export default function Introduction() {
   return (
     <div class="main">
@@ -8,7 +11,7 @@ export default function Introduction() {
           dissociative system working as a visual artist, alternative model, and
           independently published writer. Since April 2022, their primary
           autistic hyperfocus has been coding. This site is the first addition
-          to their coding portfolio.
+          to their <Link to={"/code"}>coding portfolio</Link>.
         </p>
       </div>
 
@@ -38,14 +41,9 @@ export default function Introduction() {
           deliver entertaining spoken word performances.
         </p>
         <p>
-          In 2019, a long-delayed autism diagnosis explained their former social
+          In 2019, a long-overdue autism diagnosis explained their former social
           barriers, and they started investigating careers suitable for an
-          academically bright neurodivergent person. This led to their present
-          coding obsession, with several works in progress beyond this site.
-          Their next goals are to learn another coding language, find suitable
-          employment in a disability-friendly workplace, finish book five,
-          create a new writers' app, and beat their present record of reciting
-          two thousand digits of pi.
+          academically bright neurodivergent person. This led to their present <Link to={"/code"}>coding</Link> obsession, with several works in progress beyond this site. Their next goals are to learn another coding language, find suitable employment in a disability-friendly workplace, finish book five, create a new writers' app, and beat their present record of reciting two thousand digits of pi.
         </p>
       </div>
     </div>
