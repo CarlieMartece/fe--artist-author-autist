@@ -1,3 +1,5 @@
+import "../styles/navigation.css";
+
 export default function NavSite() {
   const siteArray = [["Code"], ["Books"], ["Art"]];
 
