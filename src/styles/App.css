@@ -10,13 +10,11 @@
 
 a:link {
   color: #a6d7fa;
-  text-decoration: none;
 }
 
 a:visited {
   /* color: #a11025;  */
   color: #c2c2c2;
-  text-decoration: none;
 }
 
 .App {
@@ -51,7 +49,7 @@ h3 {
   font-size: 1.1em;
 }
 
-.main {
+main {
   grid-area: 3 / 1 / 4 / 2;
   margin: 0;
   overflow-x: hidden;
@@ -62,7 +60,7 @@ h3 {
   width: 96%;
 }
 
-.main p {
+main p {
   margin: 10px 0;
 }
 
@@ -75,7 +73,7 @@ h3 {
     grid-template-columns: 314px 1fr;
     grid-template-rows: 120px 1fr;
   }
-  .main {
+  main {
     grid-area: 2 / 1 / 3 / 3;
   }
 }

@@ -3,7 +3,7 @@ import "../styles/Introduction.css";
 
 export default function Introduction() {
   return (
-    <div class="main">
+    <main>
       <div id="intro">
         <h2>Introduction</h2>
         <p>
@@ -46,6 +46,6 @@ export default function Introduction() {
           academically bright neurodivergent person. This led to their present <Link to={"/code"}>coding</Link> obsession, with several works in progress beyond this site. Their next goals are to learn another coding language, find suitable employment in a disability-friendly workplace, finish book five, create a new writers' app, and beat their present record of reciting two thousand digits of pi.
         </p>
       </div>
-    </div>
+    </main>
   );
 }

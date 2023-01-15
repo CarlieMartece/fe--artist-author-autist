@@ -18,7 +18,7 @@
     #intro {
       grid-area: 1 / 1 / 2 / 3;
     }
-    .main {
+    main {
       display: grid;
       grid-template-columns: 420px 1fr;
       grid-template-rows: 90px 620px;

@@ -10,9 +10,9 @@ export default function NavSite() {
 
   const titles = {
     "/": "Welcome to Our Portfolio",
-    "/code": "Coder Portfolio",
-    "/books": "Writer Portfolio",
-    "/art": "Artist Portfolio"
+    "/code": "Code Portfolio",
+    "/books": "Book Portfolio",
+    "/art": "Art Portfolio"
   }
   const location = useLocation();
 

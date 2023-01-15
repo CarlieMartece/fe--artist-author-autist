@@ -29,7 +29,7 @@ export default function NavSocial() {
           return (
             <div className="hexagon">
               <img
-                alt="placeholder"
+                alt={`${platform[2]}-placeholder`}
                 key={platform[1]}
                 src={require(`../images/layout/placeholder-hex-100.png`)}
               />
