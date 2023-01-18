@@ -23,8 +23,9 @@ export default function Code() {
                  return (
                      <CodeCard 
                         key={project.project_id}
-                        codeId={project.stock_id}
+                        stockId={project.stock_id}
                         name={project.name}
+                        update={project.last_update}
                         stack={project.tech_stack}
                      />
                  )
