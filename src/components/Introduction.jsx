@@ -1,10 +1,9 @@
 import { Link } from "react-router-dom";
-import "../styles/Introduction.css";
 
 export default function Introduction() {
   return (
-    <main>
-      <div id="intro">
+    <main id="Introduction">
+      <div id="short_intro">
         <h2>Introduction</h2>
         <p>
           The Carlie Nooka Martece collective is a gender-fluid, autistic,

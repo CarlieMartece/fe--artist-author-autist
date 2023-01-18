@@ -18,7 +18,7 @@ export default function Code() {
     <main>
         {isLoading? <h3>Loading...</h3> :
         <>
-         <ul className="main__list">
+         <ul id="Code">
              {projects.code.map((project) => {
                  return (
                      <CodeCard 

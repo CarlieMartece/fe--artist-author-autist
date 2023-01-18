@@ -22,20 +22,16 @@ export default function CodeCard({ stockId, name, update, stack }) {
         <div class="code_pic">
           <img
             alt={`${name} - preview`}
+            class="center"
             src={require(`../images/preview/${stockId}.jpg`)}
           />
         </div>
         <div class="code_stack">
-          <ul>
-            {stack.map((element) => {
-              return (
-                <img
-                  alt={`${element} - logo`}
-                  src={require(`../images/layout/logo-${element}.jpg`)}
-                />
-              );
-            })}
-          </ul>
+          {stack.map((element) => {
+            return (
+              <li class="li_tech">{element}</li>
+            );
+          })}
         </div>
       </li>
     </Link>
