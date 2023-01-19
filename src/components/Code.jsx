@@ -12,7 +12,6 @@ export default function Code() {
         setIsLoading(false);
     });
   }, []);
-  console.log(projects)
 
   return (
     <main>
@@ -23,6 +22,7 @@ export default function Code() {
                  return (
                      <CodeCard 
                         key={project.project_id}
+                        projectId={project.project_id}
                         stockId={project.stock_id}
                         name={project.name}
                         update={project.last_update}

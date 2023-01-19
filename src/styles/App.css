@@ -8,12 +8,16 @@
   vertical-align: baseline;
 }
 
+/* a:active {
+  color: #a11025; 
+  text-decoration: underline;
+} */
+
 a:link {
   color: #a6d7fa;
 }
 
 a:visited {
-  /* color: #a11025;  */
   color: #c2c2c2;
 }
 

@@ -1,38 +1,36 @@
 import { Link } from "react-router-dom";
-const dayjs = require("dayjs");
+import formatDate from "../utils.js";
 
-export default function CodeCard({ stockId, name, update, stack }) {
-  console.log(update);
-  const date = dayjs(update);
-  const day = Number(date.$D);
-  const month = Number(date.$M) + 1;
-  const year = Number(date.$y);
+
+export default function CodeCard({ projectId, stockId, name, update, stack }) {
+  
+  const formattedDate = formatDate(update)
 
   return (
-    <Link to={`/code/`}>
-      <li class="CodeCard">
-        <div class="code_name">
+    <Link to={`/code/${projectId}`}>
+      <li className="CodeCard" key={projectId}>
+        <div className="code_name">
           <h3>{name}</h3>
         </div>
-        <div class="code_date">
+        <div className="code_date">
           <p>
-            {day}/{month}/{year}
+            {formattedDate}
           </p>
         </div>
-        <div class="code_pic">
+        <div className="code_pic">
           <img
             alt={`${name} - preview`}
-            class="center"
+            className="center"
             src={require(`../images/preview/${stockId}.jpg`)}
           />
         </div>
-        <div class="code_stack">
+        <ul className="code_stack">
           {stack.map((element) => {
             return (
-              <li class="li_tech">{element}</li>
+              <li className="li_tech">{element}</li>
             );
           })}
-        </div>
+        </ul>
       </li>
     </Link>
   );

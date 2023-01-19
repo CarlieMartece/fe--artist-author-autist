@@ -6,6 +6,11 @@ export default function NavSocial() {
     ["https://github.com/CarlieMartece", "github", "gh"],
     ["https://www.patreon.com/CarlieMartece", "patreon", "pt"],
   ];
+  const socialArrayTwo = [
+    ["", "facebook", "fb"],
+    ["", "tiktok", "tt"],
+    ["", "youtube", "yt"],
+  ];
 
   return (
     <nav id="NavSocial">
@@ -25,12 +30,12 @@ export default function NavSocial() {
         })}
       </div>
       <div className="nav-section" id="nav-social-two">
-        {socialArray.map((platform) => {
+        {socialArrayTwo.map((platform) => {
           return (
             <div className="hexagon">
               <img
-                alt={`${platform[2]}-placeholder`}
-                key={platform[1]}
+                alt={`${platform[1]}-placeholder`}
+                key={`${platform[1]}`}
                 src={require(`../images/layout/placeholder-hex-100.png`)}
               />
             </div>
