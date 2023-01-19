@@ -15,14 +15,17 @@ export default function CodeSingle() {
       setIsLoading(false);
     });
   }, [project_id]);
-  console.log(data.project);
 
   let launchDate,
     update = "";
 
   if (!isLoading) {
     launchDate = formatDate(data.project.first_launched);
-    update = formatDate(data.project.last_update);
+    if (data.project.last_update === null) {
+      update = launchDate;
+    } else {
+      update = formatDate(data.project.last_update);
+    }
   }
 
   return (
@@ -31,28 +34,54 @@ export default function CodeSingle() {
         <h3>Loading...</h3>
       ) : (
         <>
-          <h2>{data.project.name}</h2>
-          <p>{data.project.description}</p>
-          <p>First launched: {launchDate}</p>
-          <p>Last Update: {update}</p>
-          <p>{data.project.further_info}</p>
-          <ul className="code_stack">
-            {data.project.tech_stack.map((element) => {
-              return (
+          <div id="CodeSingle">
+            <div id="project_details">
+              <h2>{data.project.name}</h2>
+              <p className="tagline code_info">{data.project.description}</p>
+              <ExternalLink href={data.project.location}>
+                <p className="code_info">Link</p>
+              </ExternalLink>
+              <p className="code_info">First launched: {launchDate}</p>
+              <p className="code_info">Last Update: {update}</p>
+              <p className="code_info">{data.project.further_info}</p>
+              <div id="code_tech">
+                <h3>Current stack:</h3>
+                <ul className="code_stack">
+                  {data.project.tech_stack.map((element) => {
+                    return (
+                      <img
+                        alt={`${element} - logo`}
+                        key={`${element} - key`}
+                        src={require(`../images/layout/logo-${element}.jpg`)}
+                      />
+                    );
+                  })}
+                </ul>
+              </div>
+            </div>
+
+            <div className="code_pic mobile">
+              <h3>Mobile View:</h3>
+              <ExternalLink href={data.project.location}>
                 <img
-                  alt={`${element} - logo`}
-                  src={require(`../images/layout/logo-${element}.jpg`)}
+                  alt={`${data.project.name} - preview`}
+                  className="center"
+                  src={require(`../images/full/${data.project.stock_id}.jpg`)}
                 />
-              );
-            })}
-          </ul>
-          <ExternalLink href={data.project.location}>
-            <img
-              alt={`${data.project.name} - preview`}
-              className="center"
-              src={require(`../images/full/${data.project.stock_id}.jpg`)}
-            />
-          </ExternalLink>
+              </ExternalLink>
+            </div>
+
+            <div className="code_pic desktop">
+              <h3>Desktop View:</h3>
+              <ExternalLink href={data.project.location}>
+                <img
+                  alt={`${data.project.name} - preview`}
+                  className="center"
+                  src={require(`../images/full/${data.project.stock_id}d.jpg`)}
+                />
+              </ExternalLink>
+            </div>
+          </div>
         </>
       )}
     </main>
