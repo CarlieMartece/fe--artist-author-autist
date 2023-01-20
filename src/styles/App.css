@@ -36,6 +36,13 @@ a:visited {
   width: 100%;
 }
 
+.centre {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
+
 figcaption {
   color: darkgrey;
   font-style: italic;
@@ -51,6 +58,41 @@ h2 {
 
 h3 {
   font-size: 1.1em;
+}
+
+.gallery {
+  display: flex;
+  flex: 1 1 0px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  max-width: 100%;
+  text-decoration: none;
+}
+
+.gallery a {
+  text-decoration: none;
+}
+
+.galleryItem {
+  align-items: center;
+  border: 1px solid #a11025;
+  border-radius: 3px;
+  justify-content: center;
+  margin: 14px auto;
+  padding: 10px;
+  width: 230px;
+}
+
+.gallery_pic h3 {
+  margin: 5px 0 10px;
+}
+
+.gallery_pic img {
+  border: 1px white solid;
+  border-radius: 3px;
+  padding: 0;
+  vertical-align:bottom;
 }
 
 main {
@@ -79,8 +121,18 @@ main p {
   width: 7px;
 }
 
+.preview img {
+  width: 180px;
+}
+
 ::-webkit-scrollbar {
   display: none;
+}
+
+@media screen and (min-width: 525px) {
+  .galleryItem {
+    margin: 14px;
+  }
 }
 
 @media screen and (min-width: 620px) {
@@ -90,5 +142,11 @@ main p {
   }
   main {
     grid-area: 2 / 1 / 3 / 3;
+  }
+}
+
+@media screen and (min-width: 875px) {
+  .gallery {
+    justify-content: left;
   }
 }

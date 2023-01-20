@@ -1,0 +1,24 @@
+.bookPreview {
+    height: 415px;
+}
+
+.bookPreview h2, h4, p {
+    text-align: center;   
+}
+
+.bookPreview h2 {
+    margin: 0 auto;
+    width: 150px;
+}
+
+.bookPreview img {
+    margin: 5px auto 10px;
+}
+
+.bookPreview p {
+    margin: 0;
+}
+
+.bookPreview h4 {
+    margin: 10px auto;
+}

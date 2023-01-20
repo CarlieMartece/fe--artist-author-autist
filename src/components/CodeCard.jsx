@@ -8,7 +8,7 @@ export default function CodeCard({ projectId, stockId, name, update, stack }) {
 
   return (
     <Link to={`/code/${projectId}`}>
-      <li className="CodeCard" key={projectId}>
+      <li className="galleryItem" key={projectId}>
         <div className="code_name">
           <h3>{name}</h3>
         </div>
@@ -17,10 +17,10 @@ export default function CodeCard({ projectId, stockId, name, update, stack }) {
             {formattedDate}
           </p>
         </div>
-        <div className="code_pic">
+        <div className="gallery_pic preview">
           <img
             alt={`${name} - preview`}
-            className="center"
+            className="centre"
             src={require(`../images/preview/${stockId}.jpg`)}
           />
         </div>

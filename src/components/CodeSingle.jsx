@@ -60,23 +60,23 @@ export default function CodeSingle() {
               </div>
             </div>
 
-            <div className="code_pic mobile">
+            <div className="gallery_pic mobile">
               <h3>Mobile View:</h3>
               <ExternalLink href={data.project.location}>
                 <img
                   alt={`${data.project.name} - preview`}
-                  className="center"
+                  className="centre"
                   src={require(`../images/full/${data.project.stock_id}.jpg`)}
                 />
               </ExternalLink>
             </div>
 
-            <div className="code_pic desktop">
+            <div className="gallery_pic desktop">
               <h3>Desktop View:</h3>
               <ExternalLink href={data.project.location}>
                 <img
                   alt={`${data.project.name} - preview`}
-                  className="center"
+                  className="centre"
                   src={require(`../images/full/${data.project.stock_id}d.jpg`)}
                 />
               </ExternalLink>

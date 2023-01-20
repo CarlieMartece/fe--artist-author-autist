@@ -19,7 +19,7 @@ export default function Books() {
         <h3>Loading...</h3>
       ) : (
         <>
-          <ul id="Books">
+          <ul className="gallery">
             {bookData.books.map((book) => {
               return (
                 <BookCard 
