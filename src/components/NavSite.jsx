@@ -4,7 +4,7 @@ import "../styles/navigation.css";
 export default function NavSite() {
   const siteArray = [
     ["/code", "Code,"],
-    ["/", "Books,"],
+    ["/books", "Books,"],
     ["/", "Art"]
   ];
 
