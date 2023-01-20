@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import formatDate from "../utils.js";
+const { formatDate } = require("../utils.js");
 
 
 export default function CodeCard({ projectId, stockId, name, update, stack }) {
