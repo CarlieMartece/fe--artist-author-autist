@@ -14,3 +14,9 @@ export const fetchProjectSingle = (project_id) => {
     return res.data;
   });
 };
+
+export const fetchBooks = () => {
+  return api.get(`/books`).then((res) => {
+    return res.data;
+  });
+};
