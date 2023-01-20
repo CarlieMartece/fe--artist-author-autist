@@ -2,14 +2,14 @@ import { ExternalLink } from "react-external-link";
 
 export default function NavSocial() {
   const socialArray = [
-    ["https://www.linkedin.com/in/carlie-martece/", "linked-in", "li"],
-    ["https://github.com/CarlieMartece", "github", "gh"],
-    ["https://www.patreon.com/CarlieMartece", "patreon", "pt"],
+    [1, "https://www.linkedin.com/in/carlie-martece/", "linked-in", "li"],
+    [2, "https://github.com/CarlieMartece", "github", "gh"],
+    [3, "https://www.patreon.com/CarlieMartece", "patreon", "pt"],
   ];
   const socialArrayTwo = [
-    ["", "facebook", "fb"],
-    ["", "tiktok", "tt"],
-    ["", "youtube", "yt"],
+    [4, "", "facebook", "fb"],
+    [5, "", "tiktok", "tt"],
+    [6, "", "youtube", "yt"],
   ];
 
   return (
@@ -17,12 +17,12 @@ export default function NavSocial() {
       <div className="nav-section">
         {socialArray.map((platform) => {
           return (
-            <ExternalLink href={platform[0]}>
+            <ExternalLink href={platform[1]}>
               <div className="hexagon">
                 <img
-                  alt={`${platform[1]}-link`}
-                  key={platform[1]}
-                  src={require(`../images/layout/logo-${platform[2]}-100.png`)}
+                  alt={platform[2]}
+                  key={platform[0]}
+                  src={require(`../images/layout/logo-${platform[3]}-100.png`)}
                 />
               </div>
             </ExternalLink>
@@ -34,8 +34,8 @@ export default function NavSocial() {
           return (
             <div className="hexagon">
               <img
-                alt={`${platform[1]}-placeholder`}
-                key={`${platform[1]}`}
+                alt={platform[2]}
+                key={platform[0]}
                 src={require(`../images/layout/placeholder-hex-100.png`)}
               />
             </div>
