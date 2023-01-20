@@ -12,7 +12,6 @@ export default function Books() {
       setIsLoading(false);
     });
   }, []);
-  console.log(bookData.books);
 
   return (
     <main>

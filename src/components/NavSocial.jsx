@@ -17,11 +17,10 @@ export default function NavSocial() {
       <div className="nav-section">
         {socialArray.map((platform) => {
           return (
-            <ExternalLink href={platform[1]}>
+            <ExternalLink key={platform[0]} href={platform[1]}>
               <div className="hexagon">
                 <img
                   alt={platform[2]}
-                  key={platform[0]}
                   src={require(`../images/layout/logo-${platform[3]}-100.png`)}
                 />
               </div>
@@ -32,10 +31,9 @@ export default function NavSocial() {
       <div className="nav-section" id="nav-social-two">
         {socialArrayTwo.map((platform) => {
           return (
-            <div className="hexagon">
+            <div className="hexagon" key={platform[0]}>
               <img
                 alt={platform[2]}
-                key={platform[0]}
                 src={require(`../images/layout/placeholder-hex-100.png`)}
               />
             </div>

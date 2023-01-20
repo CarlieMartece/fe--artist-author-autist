@@ -10,6 +10,7 @@ import Introduction from "./components/Introduction";
 import Code from "./components/Code";
 import CodeSingle from "./components/CodeSingle";
 import Books from "./components/Books";
+import PiGrid from "./components/PiGrid";
 
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/code" element={<Code />} />
           <Route path="/code/:project_id" element={<CodeSingle />} />
           <Route path="/books" element={<Books />} />
+          <Route path="/pi" element={<PiGrid />} />
         </Routes>
       </div>
     </BrowserRouter>

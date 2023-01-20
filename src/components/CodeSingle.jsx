@@ -2,7 +2,7 @@ import { useParams } from "react-router-dom";
 import { ExternalLink } from "react-external-link";
 import { useEffect, useState } from "react";
 import { fetchProjectSingle } from "../api";
-import formatDate from "../utils.js";
+const { formatDate } = require("../utils.js");
 
 export default function CodeSingle() {
   const { project_id } = useParams();
