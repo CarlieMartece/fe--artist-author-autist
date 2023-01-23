@@ -39,7 +39,7 @@ export default function CodeSingle() {
               <h2>{data.project.name}</h2>
               <p className="tagline code_info">{data.project.description}</p>
               <ExternalLink href={data.project.location}>
-                <p className="code_info">Link</p>
+                <p className="code_info">View Here</p>
               </ExternalLink>
               <p className="code_info">First launched: {launchDate}</p>
               <p className="code_info">Last Update: {update}</p>
