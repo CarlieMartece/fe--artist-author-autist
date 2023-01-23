@@ -20,3 +20,9 @@ export const fetchBooks = () => {
     return res.data;
   });
 };
+
+export const fetchBookSingle = (book_id) => {
+  return api.get(`/books/${book_id}`).then((res) => {
+    return res.data;
+  });
+};
