@@ -15,7 +15,6 @@ export default function BookSingle() {
       setIsLoading(false);
     });
   }, [book_id]);
-  console.log(data.book);
 
   let releaseDate;
 
@@ -29,34 +28,49 @@ export default function BookSingle() {
         <h3>Loading...</h3>
       ) : (
         <>
-          <h2>{data.book.book_title}</h2>
-          {data.book.edition_no !== 1 ? (
-            <p>(Edit {data.book.edition_no})</p>
-          ) : (
-            <></>
-          )}
-          <>
-            {data.book.series_name} {data.book.sequence_no}
-          </>
-          <p>Release date: {releaseDate}</p>
-          <ExternalLink href={data.book.sales_url}>
-            <img
-              alt={`${data.book.book_title} - preview`}
-              className="centre"
-              src={require(`../images/full/${data.book.cover_stock_id}.jpg`)}
-            />
-          </ExternalLink>
-          <ul className="book_blurb">
-            {data.book.blurb.map((blurbParagraph) => {
-              const blurbKey = blurbParagraph.slice(0,14);
-              return (
-                <li key ={blurbKey}>{blurbParagraph}</li>
-              );
-            })}
-          </ul>
-          <ExternalLink href={data.book.sales_url}>
-            <p className="book_info">Buy Here</p>
-          </ExternalLink>
+          <div id="BookSingle">
+            <div className="book_title_and_info">
+              <div className="book_title">
+                <h2>{data.book.book_title}</h2>
+                {data.book.edition_no !== 1 ? (
+                  <span className="book_info book_edit">
+                    (Edit {data.book.edition_no})
+                  </span>
+                ) : (
+                  <></>
+                )}
+              </div>
+              <p className="book_info">
+                {data.book.series_name}: {data.book.sequence_no}
+              </p>
+              <p className="book_info">Release date: {releaseDate}</p>
+            </div>
+            <div className="book_cover">
+              <ExternalLink href={data.book.sales_url}>
+                <img
+                  alt={`${data.book.book_title} - preview`}
+                  className="centre"
+                  src={require(`../images/full/${data.book.cover_stock_id}.jpg`)}
+                />
+              </ExternalLink>
+            </div>
+
+            <div id="book_blurb_and_buy">
+              <ul className="book_blurb">
+                {data.book.blurb.map((blurbParagraph) => {
+                  const blurbKey = blurbParagraph.slice(0, 14);
+                  return <li key={blurbKey}>{blurbParagraph}</li>;
+                })}
+              </ul>
+              {data.book.sales_url !== null ? (
+                <ExternalLink href={data.book.sales_url}>
+                  <p className="book_buy">Buy Here</p>
+                </ExternalLink>
+              ) : (
+                <></>
+              )}
+            </div>
+          </div>
         </>
       )}
     </main>
