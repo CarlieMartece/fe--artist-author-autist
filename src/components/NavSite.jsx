@@ -5,7 +5,7 @@ export default function NavSite() {
   const siteArray = [
     ["/code", "Code,"],
     ["/books", "Books,"],
-    ["/", "Art"]
+    ["/art", "Art"]
   ];
 
   const titles = {

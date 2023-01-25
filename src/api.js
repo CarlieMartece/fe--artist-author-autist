@@ -26,3 +26,9 @@ export const fetchBookSingle = (book_id) => {
     return res.data;
   });
 };
+
+export const fetchArt = () => {
+  return api.get(`/art`).then((res) => {
+    return res.data;
+  });
+};

@@ -11,6 +11,7 @@ import Code from "./components/Code";
 import CodeSingle from "./components/CodeSingle";
 import Books from "./components/Books";
 import BookSingle from "./components/BookSingle";
+import Art from "./components/Art";
 import PiGrid from "./components/PiGrid";
 
 
@@ -26,6 +27,7 @@ function App() {
           <Route path="/code/:project_id" element={<CodeSingle />} />
           <Route path="/books" element={<Books />} />
           <Route path="/books/:book_id" element={<BookSingle />} />
+          <Route path="/art" element={<Art />} />
           <Route path="/pi" element={<PiGrid />} />
         </Routes>
       </div>
