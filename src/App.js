@@ -1,4 +1,5 @@
 import "./styles/App.css";
+import "./styles/art.css";
 import "./styles/books.css";
 import "./styles/code.css";
 import "./styles/Introduction.css";

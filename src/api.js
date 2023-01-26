@@ -27,8 +27,8 @@ export const fetchBookSingle = (book_id) => {
   });
 };
 
-export const fetchArt = () => {
-  return api.get(`/art`).then((res) => {
+export const fetchArt = (year) => {
+  return api.get(`/art?year=${year}`).then((res) => {
     return res.data;
   });
 };
