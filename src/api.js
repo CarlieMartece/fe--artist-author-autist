@@ -10,14 +10,8 @@ export const fetchArt = (year, category) => {
     })
 };
 
-export const fetchProjects = () => {
-  return api.get(`/code`).then((res) => {
-    return res.data;
-  });
-};
-
-export const fetchProjectSingle = (project_id) => {
-  return api.get(`/code/${project_id}`).then((res) => {
+export const fetchArtSingle = (project_id) => {
+  return api.get(`/art/${project_id}`).then((res) => {
     return res.data;
   });
 };
@@ -30,6 +24,18 @@ export const fetchBooks = () => {
 
 export const fetchBookSingle = (book_id) => {
   return api.get(`/books/${book_id}`).then((res) => {
+    return res.data;
+  });
+};
+
+export const fetchProjects = () => {
+  return api.get(`/code`).then((res) => {
+    return res.data;
+  });
+};
+
+export const fetchProjectSingle = (project_id) => {
+  return api.get(`/code/${project_id}`).then((res) => {
     return res.data;
   });
 };

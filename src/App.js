@@ -13,6 +13,7 @@ import CodeSingle from "./components/CodeSingle";
 import Books from "./components/Books";
 import BookSingle from "./components/BookSingle";
 import Art from "./components/Art";
+import ArtSingle from "./components/ArtSingle";
 import PiGrid from "./components/PiGrid";
 
 
@@ -29,6 +30,7 @@ function App() {
           <Route path="/books" element={<Books />} />
           <Route path="/books/:book_id" element={<BookSingle />} />
           <Route path="/art" element={<Art />} />
+          <Route path="/art/:art_id" element={<ArtSingle />} />
           <Route path="/pi" element={<PiGrid />} />
         </Routes>
       </div>

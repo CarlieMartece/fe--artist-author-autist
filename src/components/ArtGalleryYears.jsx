@@ -18,13 +18,12 @@ export default function ArtGalleryYears({ previousYear }) {
         setIsLoading(false);
       })
       .catch((err) => {
-        console.log(err);
         if (err.response) {
           setIsError(true);
           setIsLoading(false);
         }
       });
-  }, []);
+  }, [year, category]);
 
   const loadPrevious = () => {
     setPrevious(true);
