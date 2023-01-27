@@ -31,7 +31,7 @@ export default function ArtGalleryYears({ previousYear }) {
   };
   const loadButton = (
     <button className="art__previous_button" onClick={loadPrevious}>
-      {year - 1}:
+      <h2>{year - 1}:</h2>
     </button>
   );
 
@@ -47,7 +47,7 @@ export default function ArtGalleryYears({ previousYear }) {
             </>
             
           ) : (
-            <>
+            <div id="ArtGalleryYears">
               <ul className="gallery">
                 {artData.map((item) => {
                   return (
@@ -61,7 +61,7 @@ export default function ArtGalleryYears({ previousYear }) {
               </ul>
               {year > 2000 ? <>{loadButton}</> : <></>}
               {previous ? <ArtGalleryYears previousYear={year - 1} /> : <></>}
-            </>
+            </div>
           )}
         </>
       )}

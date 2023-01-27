@@ -17,7 +17,7 @@ export default function CodeCard({ projectId, stockId, name, update, stack }) {
             {formattedDate}
           </p>
         </div>
-        <div className="gallery_pic preview">
+        <div className="gallery_pic">
           <img
             alt={`${name} - preview`}
             className="centre"

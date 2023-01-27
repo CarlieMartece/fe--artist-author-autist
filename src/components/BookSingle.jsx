@@ -45,7 +45,7 @@ export default function BookSingle() {
               </p>
               <p className="book_info">Release date: {releaseDate}</p>
             </div>
-            <div className="book_cover">
+            <div className="book_cover gallery_pic">
               <ExternalLink href={data.book.sales_url}>
                 <img
                   alt={`${data.book.book_title} - preview`}

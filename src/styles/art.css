@@ -1,4 +1,12 @@
 .art__previous_button {
-    border: 1px solid red;
-    color: white;
+  background-color: #c2c2c2;
+  border: 1px solid white;
+  border-radius: 3px;
+  box-shadow: 3px -3px #888888;
+  color: black;
+  padding: 6px;
+}
+
+#ArtGalleryYears {
+    padding-bottom: 10px;
 }

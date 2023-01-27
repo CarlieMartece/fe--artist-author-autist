@@ -11,7 +11,7 @@ export default function BookCard({
   return (
     <Link to={`/books/${bookId}`}>
       <li className="galleryItem bookPreview" key={bookId}>
-        <div className="gallery_pic preview">
+        <div className="gallery_pic">
           <img 
             alt={`${bookTitle}`}
             className="centre"

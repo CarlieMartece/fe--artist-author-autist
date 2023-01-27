@@ -89,7 +89,7 @@ h3 {
 }
 
 .gallery_pic img {
-  border: 1px white solid;
+  border: 1px #c2c2c2 solid;
   border-radius: 3px;
   padding: 0;
   vertical-align:bottom;
@@ -121,17 +121,17 @@ main p {
   width: 7px;
 }
 
-.preview img {
-  width: 180px;
-}
-
 ::-webkit-scrollbar {
   display: none;
 }
 
 @media screen and (min-width: 525px) {
+  .gallery {
+    justify-content: left;
+  }
   .galleryItem {
     margin: 14px;
+    width: 180px;
   }
 }
 
@@ -145,8 +145,8 @@ main p {
   }
 }
 
-@media screen and (min-width: 875px) {
+/* @media screen and (min-width: 875px) {
   .gallery {
     justify-content: left;
   }
-}
+} */
