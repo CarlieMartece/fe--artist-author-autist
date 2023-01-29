@@ -8,6 +8,10 @@
     width: 100%;
 }
 
+#Introduction p {
+  text-align: left;
+}
+
 @media screen and (min-width: 620px) {
     #bio {
       grid-area: 2 / 2 / 3 / 3;

@@ -11,7 +11,7 @@ export default function ArtGalleryYears({ previousYear }) {
   let category = 16;
 
   useEffect(() => {
-    fetchArt(year, category)
+    fetchArt(year)
       .then((art) => {
         console.log(!art);
         setArtData(art);
@@ -23,7 +23,7 @@ export default function ArtGalleryYears({ previousYear }) {
           setIsLoading(false);
         }
       });
-  }, [year, category]);
+  }, [year]);
 
   const loadPrevious = () => {
     setPrevious(true);
@@ -49,6 +49,7 @@ export default function ArtGalleryYears({ previousYear }) {
             <div id="ArtGalleryYears">
               <ul className="gallery">
                 {artData.map((item) => {
+                  console.log(item.art_id)
                   return (
                     <ArtCard
                       key={item.art_id}
@@ -58,7 +59,7 @@ export default function ArtGalleryYears({ previousYear }) {
                   );
                 })}
               </ul>
-              {year > 2000 ? <>{loadButton}</> : <></>}
+              {year > 1999 ? <>{loadButton}</> : <></>}
               {previous ? <ArtGalleryYears previousYear={year - 1} /> : <></>}
             </div>
           )}

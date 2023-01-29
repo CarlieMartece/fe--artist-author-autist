@@ -49,8 +49,8 @@
 }
 
 .bookPreview h2,
-h4,
-p {
+.bookPreview h4,
+.bookPreview p {
   text-align: center;
 }
 
