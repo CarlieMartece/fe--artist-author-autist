@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import { ExternalLink } from "react-external-link";
 const customLinks = require("../customLinks");
 
 export default function ArtCard({ artId, stockId }) {

@@ -32,9 +32,9 @@
 .code_stack li {
   display: inline;
   float: left;
-  font-size: 0.9em;
-  padding-left: 14px;
-  width: 100px;
+  font-size: 0.8em;
+  padding-left: 4px;
+  width: 85px;
 }
 
 .tagline {

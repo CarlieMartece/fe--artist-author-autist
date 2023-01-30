@@ -27,7 +27,7 @@ export default function CodeCard({ projectId, stockId, name, update, stack }) {
         <ul className="code_stack">
           {stack.map((element) => {
             return (
-              <li className="li_tech" key={element}>{element}</li>
+              <li key={element}>{element}</li>
             );
           })}
         </ul>

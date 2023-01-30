@@ -16,9 +16,15 @@ export default function ArtSingle() {
   }, [art_id]);
   console.log(data.art);
   let year;
+  let artClass = "landscape";
   if (!isLoading) {
     const releaseDate = formatDate(data.art.completion);
     year = releaseDate.slice(-4);
+    if (data.art.shape === "P") {
+      artClass = "portrait";
+    } else if (data.art.shape === "S") {
+        artClass = "square";
+    }
   }
 
   return (
@@ -26,25 +32,39 @@ export default function ArtSingle() {
       {isLoading ? (
         <h3>Loading...</h3>
       ) : (
-        <>
-          <h2>{data.art.art_title}</h2>
-          <p>{year}</p>
-          <img
-            alt={data.art.alt_text}
-            className="centre"
-            src={require(`../images/full/${data.art.stock_id}.jpg`)}
-          />
-          <p>Series: {data.art.series_name}</p>
-          <p>Made from: {data.art.made_from}</p>
-          {data.art.price === -1 ? <></> : <p>£{data.art.price}</p>}
-          <p>{data.art.quote}</p>
-          <p>{data.art.book_title}</p>
-          {data.art.self_ref === "TBC" ? (
-            <></>
-          ) : (
-            <p>See also <Link to={`/art/${data.art.self_ref}`}>{data.art.self_ref}</Link></p>
-          )}
-        </>
+        <div id="ArtSingle">
+          <div className="art__title">
+            <h2>{data.art.art_title}</h2>
+            <span className="art__year">({year})</span>
+          </div>
+          <div className="art__pic">
+            <img
+              alt={data.art.alt_text}
+              className={artClass}
+              src={require(`../images/full/${data.art.stock_id}.jpg`)}
+            />
+          </div>
+
+          <div className="art__info">
+            <p>Made from: {data.art.made_from}</p>
+            <p>Series: {data.art.series_name}</p>
+            {data.art.price === -1 ? <></> : <p>Price: £{data.art.price}</p>}
+            {data.art.self_ref === "TBC" ? (
+              <></>
+            ) : (
+              <p>
+                See also{" "}
+                <Link to={`/art/${data.art.self_ref}`}>
+                  {data.art.self_ref}
+                </Link>
+              </p>
+            )}
+            <div className="art__quote_and_source">
+              <p className="art__quote">"{data.art.quote}"</p>
+              <p className="art__quote_source">{data.art.book_title}</p>
+            </div>
+          </div>
+        </div>
       )}
     </main>
   );
