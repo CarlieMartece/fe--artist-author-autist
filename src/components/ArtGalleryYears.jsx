@@ -7,7 +7,8 @@ export default function ArtGalleryYears({ previousYear }) {
   const [isLoading, setIsLoading] = useState(true);
   const [previous, setPrevious] = useState(false);
   const [isError, setIsError] = useState(false);
-  const year = previousYear || new Date().getFullYear();
+  // const year = previousYear || new Date().getFullYear();
+  const year = 1999;
   let category = 16;
 
   useEffect(() => {
