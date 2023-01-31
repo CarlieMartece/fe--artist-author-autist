@@ -14,17 +14,22 @@ export default function ArtSingle() {
       setIsLoading(false);
     });
   }, [art_id]);
-  console.log(data.art);
+  console.log(!data.art.close_ups);
   let year;
   let artClass = "landscape";
+  let closeUps;
   if (!isLoading) {
     const releaseDate = formatDate(data.art.completion);
     year = releaseDate.slice(-4);
     if (data.art.shape === "P") {
       artClass = "portrait";
     } else if (data.art.shape === "S") {
-        artClass = "square";
+      artClass = "square";
     }
+    if (data.art.close_ups) {
+      closeUps = data.art.close_ups.split(",");
+    }
+    console.log(closeUps);
   }
 
   return (
@@ -63,6 +68,26 @@ export default function ArtSingle() {
               <p className="art__quote">"{data.art.quote}"</p>
               <p className="art__quote_source">{data.art.book_title}</p>
             </div>
+
+            {!data.art.close_ups ? (
+              <></>
+            ) : (
+              <div className="art__close_ups">
+                <h2>Close Ups</h2>
+                <ul className="gallery">
+                  {closeUps.map((closeUp) => {
+                    return (
+                      <li className="art__close_up" key = {closeUp}>
+                        <img
+                          alt={`${closeUp}-preview`}
+                          src={require(`../images/preview/${closeUp}.jpg`)}
+                        />
+                      </li>
+                    );
+                  })}
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       )}
