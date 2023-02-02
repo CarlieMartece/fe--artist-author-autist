@@ -99,26 +99,3 @@ export default function ArtSingle() {
     </main>
   );
 }
-
-// export default function ArtParams() {
-//   let { art_id } = useParams();
-//   let extraStockId;
-//   let extraId;
-
-//   if (art_id.length > 3) {
-//     const splitArray = art_id.split("-");
-//     art_id = splitArray[0];
-//     extraStockId = splitArray[1];
-//   }
-//   if (customPics.hasOwnProperty(extraStockId)) {
-//     extraId = customPics[extraStockId]
-//   }
-
-//   return (
-//     <ArtSingle
-//       art_id={art_id}
-//       stockExtra={extraStockId}
-//       idExtra={extraId}
-//     />
-//   )
-// }

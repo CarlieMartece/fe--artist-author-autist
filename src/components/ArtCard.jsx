@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom";
 const customLinks = require("../customLinks");
 
-export default function ArtCard({ artId, stockId, threeWords, closeArray, isClose }) {
+export default function ArtCard({
+  artId,
+  stockId,
+  threeWords,
+  closeArray,
+  isClose,
+}) {
+  
   let cardLink = "";
   if (customLinks.hasOwnProperty(artId)) {
     cardLink = customLinks[artId];
-  } else if (closeArray || isClose) {
-    console.log(threeWords)
+  } else if (closeArray) {
     cardLink = `/art/collage/${threeWords}`;
+  } else if (isClose) {
+    console.log(stockId);
+    cardLink = `/art/collage/${threeWords}--${stockId}`;
   } else {
     cardLink = `/art/${artId}`;
   }
@@ -28,7 +37,7 @@ export default function ArtCard({ artId, stockId, threeWords, closeArray, isClos
 
   return (
     <Link to={cardLink}>
-        <GalleryPic />
+      <GalleryPic />
     </Link>
   );
 }
