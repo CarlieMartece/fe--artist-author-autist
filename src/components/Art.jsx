@@ -1,4 +1,4 @@
-import ArtGalleryBig from "./ArtGalleryYears";
+import ArtGalleryYears from "./ArtGalleryYears";
 
 export default function Art() {
   return (
@@ -6,7 +6,7 @@ export default function Art() {
       <h2>*Search Bar*</h2>
       
       <h2>Latest Visual Art:</h2>
-      <ArtGalleryBig />
+      <ArtGalleryYears />
     </main>
   );
 }

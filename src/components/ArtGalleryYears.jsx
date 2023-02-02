@@ -7,12 +7,12 @@ export default function ArtGalleryYears({ previousYear }) {
   const [isLoading, setIsLoading] = useState(true);
   const [previous, setPrevious] = useState(false);
   const [isError, setIsError] = useState(false);
-  // const year = previousYear || new Date().getFullYear();
-  const year = 1999;
+  const year = previousYear || new Date().getFullYear();
+  //const year = 1999;
   let category = 16;
 
   useEffect(() => {
-    fetchArt(year)
+    fetchArt(year, category)
       .then((art) => {
         console.log(!art);
         setArtData(art);
@@ -24,7 +24,7 @@ export default function ArtGalleryYears({ previousYear }) {
           setIsLoading(false);
         }
       });
-  }, [year]);
+  }, [year, category]);
 
   const loadPrevious = () => {
     setPrevious(true);
@@ -56,6 +56,9 @@ export default function ArtGalleryYears({ previousYear }) {
                       key={item.art_id}
                       artId={item.art_id}
                       stockId={item.stock_id}
+                      threeWords={item.three_word_description}
+                      closeArray={item.close_ups}
+                      isClose={item.is_close_up}
                     />
                   );
                 })}

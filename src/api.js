@@ -10,8 +10,17 @@ export const fetchArt = (year, category) => {
     })
 };
 
-export const fetchArtSingle = (project_id) => {
-  return api.get(`/art/${project_id}`).then((res) => {
+export const fetchArtSingle = (art_id, idExtra) => {
+  return api.get(`/art/${art_id}`, { params: { extra: idExtra } })
+  .then((res) => {
+    return res.data;
+  });
+};
+
+export const fetchArtCollage = (three_word_description) => {
+  return api.get(`/art/collage/${three_word_description}`)
+  .then((res) => {
+    console.log(res.data)
     return res.data;
   });
 };

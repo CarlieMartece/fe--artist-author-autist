@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 const customLinks = require("../customLinks");
 
-export default function ArtCard({ artId, stockId }) {
+export default function ArtCard({ artId, stockId, threeWords, closeArray, isClose }) {
   let cardLink = "";
   if (customLinks.hasOwnProperty(artId)) {
     cardLink = customLinks[artId];
+  } else if (closeArray || isClose) {
+    console.log(threeWords)
+    cardLink = `/art/collage/${threeWords}`;
   } else {
     cardLink = `/art/${artId}`;
   }
