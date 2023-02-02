@@ -54,8 +54,10 @@ export default function ArtGalleryYears({ previousYear }) {
                   return (
                     <ArtCard
                       key={item.art_id}
+                      customLink={item.custom_link}
                       artId={item.art_id}
                       stockId={item.stock_id}
+                      altText={item.alt_text}
                       threeWords={item.three_word_description}
                       closeArray={item.close_ups}
                       isClose={item.is_close_up}

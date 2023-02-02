@@ -9,11 +9,10 @@ export default function ArtCollage() {
   const [stockIds, setStockIds] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   let { threeWords } = useParams();
-  
 
   useEffect(() => {
     const paramSplit = threeWords.split("--");
-  const params = paramSplit[0];
+    const params = paramSplit[0];
     fetchArtCollage(params).then((art) => {
       setData(art);
       const ids = Object.keys(art.collage);

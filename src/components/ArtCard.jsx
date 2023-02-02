@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
-const customLinks = require("../customLinks");
 
 export default function ArtCard({
+  customLink,
   artId,
   stockId,
+  altText,
   threeWords,
   closeArray,
   isClose,
 }) {
   
   let cardLink = "";
-  if (customLinks.hasOwnProperty(artId)) {
-    cardLink = customLinks[artId];
+  if (customLink) {
+    cardLink = customLink;
   } else if (closeArray) {
     cardLink = `/art/collage/${threeWords}`;
   } else if (isClose) {
@@ -26,7 +27,7 @@ export default function ArtCard({
       <li className="galleryItem" key={artId}>
         <div className="gallery_pic">
           <img
-            alt={`${artId}-preview`}
+            alt={altText}
             className="centre"
             src={require(`../images/preview/${stockId}.jpg`)}
           />
