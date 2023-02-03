@@ -1,7 +1,9 @@
 import { Link, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import {Img} from 'react-image'
 import { fetchArtSingle } from "../api";
 const { formatDate } = require("../utils.js");
+
 
 export default function ArtSingle() {
   const [data, setData] = useState([]);
@@ -15,12 +17,8 @@ export default function ArtSingle() {
     });
   }, [art_id]);
 
-  let closeUps;
-  let year;
+  let year = new Date().getFullYear();
   if (!isLoading) {
-    if (data.art[0].close_ups) {
-      closeUps = data.art[0].close_ups.split(",");
-    }
     const releaseDate = formatDate(data.art[0].completion);
     year = releaseDate.slice(-4);
   }
@@ -36,45 +34,21 @@ export default function ArtSingle() {
             <span className="art__year">({year})</span>
           </div>
           <div className="art__pic">
-            <img
-              alt={data.art[0].alt_text}
-              className={data.art[0].shape}
-              src={require(`../images/full/${data.art[0].stock_id}.jpg`)}
-            />
+          <Img
+                alt={data.art[0].alt_text}
+                className={data.art[0].shape}
+                src={[`https://raw.githubusercontent.com/CarlieMartece/fe--artist-author-autist/main/src/images/full/${data.art[0].stock_id}.jpg`, require(`../images/full/404.jpg`)]}
+              />
           </div>
 
           <div className="art__info">
-            {!data.art[0].close_ups ? (
-              <></>
-            ) : (
-              <div className="art__close_ups">
-                <ul className="gallery">
-                  {closeUps.map((closeUp) => {
-                    return (
-                      <button>
-                        <li className="art__close_up">
-                          <img
-                            alt={`${closeUp}-preview`}
-                            src={require(`../images/preview/${closeUp}.jpg`)}
-                          />
-                        </li>
-                      </button>
-                    );
-                  })}
-                  <Link to={`/art/${art_id}`}>
-                    <li className="art__close_up" key={art_id}>
-                      <img
-                        alt={`${art_id}-preview`}
-                        src={require(`../images/preview/${data.art[0].stock_id}.jpg`)}
-                      />
-                    </li>
-                  </Link>
-                </ul>
-              </div>
-            )}
             <p>Made from: {data.art[0].made_from}</p>
             <p>Series: {data.art[0].series_name}</p>
-            {data.art[0].price === -1 ? <></> : <p>Price: £{data.art[0].price}</p>}
+            {data.art[0].price === -1 ? (
+              <></>
+            ) : (
+              <p>Price: £{data.art[0].price}</p>
+            )}
             {data.art[0].self_ref === -1 ? (
               <></>
             ) : (
@@ -86,12 +60,8 @@ export default function ArtSingle() {
               </p>
             )}
             <div className="art__quote_and_source">
-              <p className="art__quote">
-                "{data.art[0].quote}"
-              </p>
-              <p className="art__quote_source">
-                {data.art[0].book_title}
-              </p>
+              <p className="art__quote">"{data.art[0].quote}"</p>
+              <p className="art__quote_source">{data.art[0].book_title}</p>
             </div>
           </div>
         </div>
