@@ -16,7 +16,6 @@ export default function ArtCard({
   } else if (closeArray) {
     cardLink = `/art/collage/${threeWords}`;
   } else if (isClose) {
-    console.log(stockId);
     cardLink = `/art/collage/${threeWords}--${stockId}`;
   } else {
     cardLink = `/art/${artId}`;

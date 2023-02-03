@@ -1,14 +1,16 @@
 .art__close_ups {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .art__close_ups h2 {
-    margin-bottom: 14px;
+  margin-bottom: 14px;
 }
 
 .art__close_up img {
-    margin: 0 10px 10px 0;
-    width: 90px;
+  border: 1px #c2c2c2 solid;
+  border-radius: 3px;
+  margin: 0 10px 10px 0;
+  width: 90px;
 }
 
 #ArtGalleryYears {
@@ -30,7 +32,7 @@
 }
 
 .art__quote_and_source {
-    text-align: right;
+  text-align: right;
 }
 
 .art__quote_source {
@@ -96,6 +98,6 @@
     max-width: 415px;
   }
   .square {
-      max-width: 515px;
+    max-width: 515px;
   }
 }

@@ -25,6 +25,7 @@ export default function ArtCollage() {
   let mainPic;
   let year;
   let closeUps;
+  let picLink = "";
   if (!isLoading) {
     mainPic = data.collage[mainId];
     if (data.collage[stockIds[0]].close_ups) {
@@ -32,6 +33,13 @@ export default function ArtCollage() {
     }
     const releaseDate = formatDate(data.collage[mainId].completion);
     year = releaseDate.slice(-4);
+    if (mainPic.self_ref.length !== 0) {
+      if (mainPic.self_ref[0][0] === '3') {
+        picLink = `/art/collage/${mainPic.self_ref[2]}`;
+      } else {
+        picLink = `/art/${mainPic.self_ref[1]}`;
+      }
+    }
   }
 
   const changePic = (closeUp) => {
@@ -94,13 +102,20 @@ export default function ArtCollage() {
             <p>Made from: {mainPic.made_from}</p>
             <p>Series: {mainPic.series_name}</p>
             {mainPic.price === -1 ? <></> : <p>Price: £{mainPic.price}</p>}
-            {mainPic.self_ref === -1 ? (
+            {mainPic.self_ref.length === 0 ? (
               <></>
             ) : (
-              <p>
-                See also{" "}
-                <Link to={`/art/${mainPic.self_ref}`}>{mainPic.self_ref}</Link>
-              </p>
+              <>
+                See also:{" "}
+                <p>
+                  <Link className="art__close_up" to={picLink}>
+                    <img
+                      alt={mainPic.alt_text}
+                      src={require(`../images/preview/${mainPic.self_ref[0]}.jpg`)}
+                    />
+                  </Link>
+                </p>
+              </>
             )}
             <div className="art__quote_and_source">
               <p className="art__quote">"{mainPic.quote}"</p>
