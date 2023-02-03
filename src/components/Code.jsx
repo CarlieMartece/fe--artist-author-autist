@@ -8,30 +8,35 @@ export default function Code() {
 
   useEffect(() => {
     fetchProjects().then((codeProjects) => {
-        setProjects(codeProjects);
-        setIsLoading(false);
+      setProjects(codeProjects);
+      setIsLoading(false);
     });
   }, []);
 
   return (
     <main>
-        {isLoading? <h3>Loading...</h3> :
-        <>
-         <ul className="gallery">
-             {projects.code.map((project) => {
-                 return (
-                     <CodeCard 
-                        key={project.project_id}
-                        projectId={project.project_id}
-                        stockId={project.stock_id}
-                        name={project.name}
-                        update={project.last_update}
-                        stack={project.tech_stack}
-                     />
-                 )
-             })}
-         </ul>
-        </>}
+      <div>
+        {isLoading ? (
+          <h3>Loading...</h3>
+        ) : (
+          <>
+            <ul className="gallery">
+              {projects.code.map((project) => {
+                return (
+                  <CodeCard
+                    key={project.project_id}
+                    projectId={project.project_id}
+                    stockId={project.stock_id}
+                    name={project.name}
+                    update={project.last_update}
+                    stack={project.tech_stack}
+                  />
+                );
+              })}
+            </ul>
+          </>
+        )}
+      </div>
     </main>
   );
 }

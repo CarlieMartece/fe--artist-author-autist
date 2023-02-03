@@ -1,3 +1,8 @@
+#ArtSearchBar {
+  color: white;
+  margin-top: 5px;
+}
+
 .hexagon {
   border-right: 5px solid transparent;
   float: left;
@@ -25,13 +30,16 @@
   width: 90px;
 }
 
+.nav_art {
+  height: 90px;
+}
+
 #nav-portfolio a:link {
   text-decoration: none;
 }
 
 #NavSite {
   grid-area: 2 / 1 / 3 / 2;
-  height: 50px;
   margin: -10px 0 0;
   overflow-x: hidden;
   padding: 0;
@@ -51,6 +59,10 @@
 .nav-section {
   float: left;
   height: 50px;
+}
+
+.searchSelect {
+  background-color: #d6d6d6;
 }
 
 @media screen and (min-width: 620px) {
