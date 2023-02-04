@@ -1,6 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
 import "../styles/navigation.css";
-import ArtSearchBar from "./ArtSearchBar";
 
 export default function NavSite() {
   const siteArray = [
@@ -17,11 +16,11 @@ export default function NavSite() {
   }
   const location = useLocation();
   const locationCrop = location.pathname.slice(0,4);
-  let navClass = "nav_codebook"
-  if (locationCrop === "/art") navClass = "nav_art"
+  // let navClass = "nav_codebook"
+  // if (locationCrop === "/art") navClass = "nav_art"
 
   return (
-    <div id="NavSite" className={navClass}>
+    <div id="NavSite">
       <div id="welcome">
         <h1>{titles[locationCrop]}</h1>
       </div>
@@ -38,11 +37,11 @@ export default function NavSite() {
         ]
       </nav>
 
-      {locationCrop === "/art" ? (
+      {/* {locationCrop === "/art" ? (
         <ArtSearchBar />
       ) : (
         <></>
-      )}
+      )} */}
     </div>
   );
 }

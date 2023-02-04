@@ -27,7 +27,7 @@ a:visited {
   display: grid;
   height: 100vh;
   grid-template-columns: 100%;
-  grid-template-rows: 112px 90px 1fr;
+  grid-template-rows: 112px 60px 1fr;
   grid-column-gap: 0px;
   grid-row-gap: 0px;
   margin: 0;
@@ -46,18 +46,6 @@ a:visited {
 figcaption {
   color: darkgrey;
   font-style: italic;
-}
-
-h1 {
-  font-size: 1.4em;
-}
-
-h2 {
-  font-size: 1.2em;
-}
-
-h3 {
-  font-size: 1.1em;
 }
 
 .gallery {
@@ -93,6 +81,18 @@ h3 {
   border-radius: 3px;
   padding: 0;
   vertical-align:bottom;
+}
+
+h1 {
+  font-size: 1.4em;
+}
+
+h2 {
+  font-size: 1.2em;
+}
+
+h3 {
+  font-size: 1.1em;
 }
 
 main {

@@ -40,6 +40,10 @@
   margin: 0 auto;
 }
 
+#art__search_and_gallery {
+  margin-top: 21px;
+}
+
 #ArtSingle {
   padding: 6px;
 }

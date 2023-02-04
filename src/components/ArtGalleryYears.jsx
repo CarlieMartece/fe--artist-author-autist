@@ -2,17 +2,17 @@ import { useEffect, useState } from "react";
 import { fetchArt } from "../api";
 import ArtCard from "./ArtCard";
 
-export default function ArtGalleryYears({ previousYear }) {
+export default function ArtGalleryYears({ previousYear, category }) {
   const [artData, setArtData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [previous, setPrevious] = useState(false);
   const [isError, setIsError] = useState(false);
-  const year = previousYear || new Date().getFullYear();
-  //const year = 1999;
-  //let category = 16;
+  const year = previousYear;
+  console.log(year)
+  console.log(category)
 
   useEffect(() => {
-    fetchArt(year)
+    fetchArt(year, category)
       .then((art) => {
         setArtData(art);
         setIsLoading(false);
@@ -23,7 +23,7 @@ export default function ArtGalleryYears({ previousYear }) {
           setIsLoading(false);
         }
       });
-  }, [year]);
+  }, [year, category]);
 
   const loadPrevious = () => {
     setPrevious(true);
@@ -42,7 +42,7 @@ export default function ArtGalleryYears({ previousYear }) {
         <>
           {isError ? (
             <>
-              <ArtGalleryYears previousYear={year - 1} />
+              <ArtGalleryYears previousYear={year - 1} category={category} />
             </>
             
           ) : (
