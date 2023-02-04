@@ -4,6 +4,8 @@ const api = axios.create({
 });
 
 export const fetchArt = (year, category) => {
+  // console.log(`year is ${year}`)
+  // console.log(`category is ${category}`)
   return api.get(`/art`, { params: { year: year, category: category } })
     .then((res) => {
       return res.data;

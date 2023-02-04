@@ -21,7 +21,7 @@ export default function ArtSingle() {
     const releaseDate = formatDate(data.art[0].completion);
     year = releaseDate.slice(-4);
     if (data.art[0].self_ref.length !== 0) {
-      console.log(data.art[0].self_ref)
+      //console.log(data.art[0].self_ref)
       if (data.art[0].self_ref[0][0] === '3') {
         picLink = `/art/collage/${data.art[0].self_ref[2]}--${data.art[0].self_ref[0]}`;
       } else {
