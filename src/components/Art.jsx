@@ -3,7 +3,7 @@ import ArtGalleryYears from "./ArtGalleryYears";
 import ArtGallery from "./ArtGallery";
 
 export default function Art() {
-  const [selectedCategory, setSelectedCategory] = useState("16");
+  const [selectedCategory, setSelectedCategory] = useState("314");
   const categoryObj = {
     1: "Drawing",
     2: "Painting",
@@ -14,29 +14,65 @@ export default function Art() {
     16: "Visual Art",
     314: "Creations",
   };
+  const [selectedYear, setSelectedYear] = useState("314");
+  const [yearChanged, setYearChanged] = useState(false);
+  const years = [];
+  for (let i = new Date().getFullYear(); i > 1998; i--) {
+    years.push(i);
+  }
+
+  const categoryUpdate = (e) => {
+    setSelectedCategory(e.target.value);
+    setSelectedYear("");
+    setYearChanged(false);
+  }
 
   const ArtGalleryCategory = () => {
-    const year = new Date().getFullYear();
-    return (
-      <main>
-        <div id="art__search_and_gallery">
-          {selectedCategory === "16" || selectedCategory === "314" ? (
+    if (!yearChanged || selectedYear === "314") {
+      const newYear = new Date().getFullYear();
+      return (
+        <main>
+          <div id="art__search_and_gallery">
+            {selectedCategory === "16" || selectedCategory === "314" ? (
+              <>
+                <h2>Latest {categoryObj[selectedCategory]}:</h2>
+                <ArtGalleryYears
+                  previousYear={newYear}
+                  category={selectedCategory}
+                />
+              </>
+            ) : (
+              <>
+                <h2>All {categoryObj[selectedCategory]}:</h2>
+                <ArtGallery category={selectedCategory} />
+              </>
+            )}
+          </div>
+        </main>
+      );
+    }
+  };
+
+  const yearUpdate = (e) => {
+    setSelectedYear(e.target.value);
+    setYearChanged(true);
+    setSelectedCategory("314");
+  }
+
+  const ArtGalleryYear = () => {
+    console.log(selectedYear)
+    if (yearChanged && selectedYear !== "314") {
+      return (
+        <main>
+          <div id="art__search_and_gallery">
             <>
-              <h2>Latest {categoryObj[selectedCategory]}:</h2>
-              <ArtGalleryYears
-                previousYear={year}
-                category={selectedCategory}
-              />
+              <h2>Everything {selectedYear}:</h2>
+              <ArtGallery category={314} selectedYear={selectedYear} />
             </>
-          ) : (
-            <>
-              <h2>All {categoryObj[selectedCategory]}:</h2>
-              <ArtGallery category={selectedCategory} />
-            </>
-          )}
-        </div>
-      </main>
-    );
+          </div>
+        </main>
+      );
+    }
   };
 
   return (
@@ -45,19 +81,33 @@ export default function Art() {
         <select
           className="searchSelect"
           value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
+          onChange={(e) => categoryUpdate(e)}
         >
+          <option value="314">Everything</option>
+          <option value="16">Visual Art</option>
           <option value="1">Drawing</option>
           <option value="2">Painting</option>
           <option value="3">Collage</option>
           <option value="4">Photography</option>
           <option value="5">Digital</option>
           <option value="6">Film</option>
-          <option value="16">Visual Art</option>
-          <option value="314">Everything</option>
+        </select>
+        <select
+          className="searchSelect"
+          value={selectedYear}
+          onChange={(e) => yearUpdate(e)}
+        >
+          <option value="314">All Time</option>
+          {years.map((year) => {
+            return (
+            <option value={year}>{year}</option>
+            );
+          })}
+          
         </select>
       </form>
       <ArtGalleryCategory />
+      <ArtGalleryYear />
     </>
   );
 }

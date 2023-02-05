@@ -2,17 +2,20 @@ import { useEffect, useState } from "react";
 import { fetchArt } from "../api";
 import ArtCard from "./ArtCard";
 
-export default function ArtGallery({ category }) {
+export default function ArtGallery({ selectedYear, category }) {
   const [artData, setArtData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
+  const year = selectedYear || 314;
+  console.log(`gallery cat ${category}`)
+  console.log(`gallery year ${year}`)
 
   useEffect(() => {
-    fetchArt("314", category)
+    fetchArt(year, category)
       .then((art) => {
         setArtData(art);
         setIsLoading(false);
       })
-  }, ["314", category]);
+  }, [year, category]);
 
 
   return (

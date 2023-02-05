@@ -16,8 +16,7 @@ export default function NavSite() {
   }
   const location = useLocation();
   const locationCrop = location.pathname.slice(0,4);
-  // let navClass = "nav_codebook"
-  // if (locationCrop === "/art") navClass = "nav_art"
+
 
   return (
     <div id="NavSite">
@@ -36,12 +35,6 @@ export default function NavSite() {
         })}
         ]
       </nav>
-
-      {/* {locationCrop === "/art" ? (
-        <ArtSearchBar />
-      ) : (
-        <></>
-      )} */}
     </div>
   );
 }
