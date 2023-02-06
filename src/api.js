@@ -12,6 +12,14 @@ export const fetchArt = (year, category) => {
     })
 };
 
+export const fetchArtByColour = (colour) => {
+  console.log(`colour is ${colour}`)
+  return api.get(`/art`, { params: { colour: colour } })
+  .then((res) => {
+    return res.data;
+  })
+};
+
 export const fetchArtSingle = (art_id, idExtra) => {
   return api.get(`/art/${art_id}`, { params: { extra: idExtra } })
   .then((res) => {

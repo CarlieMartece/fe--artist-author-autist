@@ -20,48 +20,71 @@ export default function Art() {
   for (let i = new Date().getFullYear(); i > 1998; i--) {
     years.push(i);
   }
+  const [selectedColour, setSelectedColour] = useState("314");
+  const [colourChanged, setColourChanged] = useState(false);
+  const colours = ["red", "orange", "yellow", "green", "blue", "indigo", "violet", "purple", "silver", "brown", "black", "white", "grey", "monochrome", "redblackwhite"]
 
   const categoryUpdate = (e) => {
     setSelectedCategory(e.target.value);
     setSelectedYear("");
     setYearChanged(false);
+    setSelectedColour("314");
+    setColourChanged(false);
   }
-
-  const ArtGalleryCategory = () => {
-    if (!yearChanged || selectedYear === "314") {
-      const newYear = new Date().getFullYear();
-      return (
-        <main>
-          <div id="art__search_and_gallery">
-            {selectedCategory === "16" || selectedCategory === "314" ? (
-              <>
-                <h2>Latest {categoryObj[selectedCategory]}:</h2>
-                <ArtGalleryYears
-                  previousYear={newYear}
-                  category={selectedCategory}
-                />
-              </>
-            ) : (
-              <>
-                <h2>All {categoryObj[selectedCategory]}:</h2>
-                <ArtGallery category={selectedCategory} />
-              </>
-            )}
-          </div>
-        </main>
-      );
-    }
-  };
 
   const yearUpdate = (e) => {
     setSelectedYear(e.target.value);
     setYearChanged(true);
     setSelectedCategory("314");
+    setSelectedColour("314");
+    setColourChanged(false);
   }
 
-  const ArtGalleryYear = () => {
-    console.log(selectedYear)
-    if (yearChanged && selectedYear !== "314") {
+  const colourUpdate = (e) => {
+    setSelectedColour(e.target.value);
+    setColourChanged(true);
+    setSelectedYear("314");
+    setYearChanged(false);
+    setSelectedCategory("314");
+  }
+
+  const ArtGalleryCategory = () => {
+    if (!yearChanged || selectedYear === "314") {
+      const newYear = new Date().getFullYear();
+      if (!colourChanged || selectedColour === "314") {
+        return (
+          <main>
+            <div id="art__search_and_gallery">
+              {selectedCategory === "16" || selectedCategory === "314" ? (
+                <>
+                  <h2>Latest {categoryObj[selectedCategory]}:</h2>
+                  <ArtGalleryYears
+                    previousYear={newYear}
+                    category={selectedCategory}
+                  />
+                </>
+              ) : (
+                <>
+                  <h2>All {categoryObj[selectedCategory]}:</h2>
+                  <ArtGallery category={selectedCategory} />
+                </>
+              )}
+            </div>
+          </main>
+        );
+      } else {
+        return (
+          <main>
+            <div id="art__search_and_gallery">
+              <>
+                <h2>Everything's {selectedColour}:</h2>
+                <ArtGallery selectedColour={selectedColour} />
+              </>
+            </div>
+          </main>
+        );
+      }
+    } else {
       return (
         <main>
           <div id="art__search_and_gallery">
@@ -105,9 +128,21 @@ export default function Art() {
           })}
           
         </select>
+        <select
+          className="searchSelect"
+          value={selectedColour}
+          onChange={(e) => colourUpdate(e)}
+        >
+          <option value="314">Colours</option>
+          {colours.map((colour) => {
+            return (
+            <option value={colour}>{colour}</option>
+            );
+          })}
+          
+        </select>
       </form>
       <ArtGalleryCategory />
-      <ArtGalleryYear />
     </>
   );
 }

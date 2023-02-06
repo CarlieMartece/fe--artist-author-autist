@@ -5,17 +5,13 @@ export default function ArtCard({
   artId,
   stockId,
   altText,
-  threeWords,
-  closeArray,
-  isClose,
+  threeWords
 }) {
   
   let cardLink = "";
   if (customLink) {
     cardLink = customLink;
-  } else if (closeArray) {
-    cardLink = `/art/collage/${threeWords}`;
-  } else if (isClose) {
+  } else if (stockId[0] === '3') {
     cardLink = `/art/collage/${threeWords}--${stockId}`;
   } else {
     cardLink = `/art/${artId}`;
