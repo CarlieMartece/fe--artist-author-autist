@@ -9,7 +9,8 @@
 .art__close_up img {
   border: 1px #c2c2c2 solid;
   border-radius: 3px;
-  margin: 0 10px 10px 0;
+  margin-right: 10px;
+  padding: 0;
   width: 90px;
 }
 
@@ -29,6 +30,7 @@
 .art__quote {
   font-style: italic;
   margin: 0 auto;
+  padding: 0;
 }
 
 .art__quote_and_source {
@@ -42,6 +44,21 @@
 
 #art__search_and_gallery {
   margin-top: 14px;
+}
+
+.art__self_link {
+  margin: 5px 0 -10px;
+}
+
+.art__self_link img {
+  border: 1px #c2c2c2 solid;
+  border-radius: 3px;
+  width: 90px;
+}
+
+.art__self_link p {
+  margin: 5px 0 0;
+  padding: 0;
 }
 
 #ArtSingle {

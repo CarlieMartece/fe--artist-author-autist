@@ -6,9 +6,9 @@ export default function ArtGallery({ selectedYear, category, selectedColour }) {
   const [artData, setArtData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const year = selectedYear || 314;
-  console.log(`gallery cat ${category}`);
-  console.log(`gallery year ${year}`);
-  console.log(`gallery colour ${selectedColour}`);
+  //console.log(`gallery cat ${category}`);
+  //console.log(`gallery year ${year}`);
+  //console.log(`gallery colour ${selectedColour}`);
 
   useEffect(() => {
     if (!selectedColour) {
@@ -23,7 +23,7 @@ export default function ArtGallery({ selectedYear, category, selectedColour }) {
       });
     }
   }, [year, category]);
-  if (!isLoading) console.log(artData)
+  //if (!isLoading) console.log(artData)
 
   return (
     <>

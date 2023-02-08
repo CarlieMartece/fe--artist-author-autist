@@ -49,11 +49,12 @@ export default function CodeSingle() {
                 <ul className="code_stack">
                   {data.project.tech_stack.map((element) => {
                     return (
-                      <img
-                        alt={`${element} - logo`}
-                        key={`${element} - key`}
-                        src={require(`../images/layout/logo-${element}.jpg`)}
-                      />
+                      <li key={`${element} - key`}>
+                        <img
+                          alt={`${element} - logo`}
+                          src={require(`../images/layout/logo-${element}.jpg`)}
+                        />
+                      </li>
                     );
                   })}
                 </ul>

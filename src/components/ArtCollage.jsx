@@ -28,13 +28,14 @@ export default function ArtCollage() {
   let picLink = "";
   if (!isLoading) {
     mainPic = data.collage[mainId];
+    console.log(mainPic);
     if (data.collage[stockIds[0]].close_ups) {
       closeUps = data.collage[stockIds[0]].close_ups.split(",");
     }
     const releaseDate = formatDate(data.collage[mainId].completion);
     year = releaseDate.slice(-4);
     if (mainPic.self_ref.length !== 0) {
-      if (mainPic.self_ref[0][0] === '3') {
+      if (mainPic.self_ref[0][0] === "3") {
         picLink = `/art/collage/${mainPic.self_ref[2]}`;
       } else {
         picLink = `/art/${mainPic.self_ref[1]}`;
@@ -100,27 +101,31 @@ export default function ArtCollage() {
               </div>
             )}
             <p>Made from: {mainPic.made_from}</p>
-            <p>Series: {mainPic.series_name}</p>
-            {mainPic.price === -1 ? <></> : <p>Price: £{mainPic.price}</p>}
+            <p>Series: {data.collage[stockIds[0]].series_name}</p>
+            {data.collage[stockIds[0]].price === -1 ? <></> : <p>Price: £{data.collage[stockIds[0]].price}</p>}
             {mainPic.self_ref.length === 0 ? (
               <></>
             ) : (
-              <>
+              <div className="art__self_link">
                 See also:{" "}
                 <p>
-                  <Link className="art__close_up" to={picLink}>
+                  <Link to={picLink}>
                     <img
                       alt={mainPic.alt_text}
                       src={require(`../images/preview/${mainPic.self_ref[0]}.jpg`)}
                     />
                   </Link>
                 </p>
-              </>
+              </div>
             )}
-            <div className="art__quote_and_source">
-              <p className="art__quote">"{mainPic.quote}"</p>
-              <p className="art__quote_source">{mainPic.book_title}</p>
-            </div>
+            {!mainPic.quote? (
+              <></>
+            ) : (
+              <div className="art__quote_and_source">
+                <p className="art__quote">"{mainPic.quote}"</p>
+                <p className="art__quote_source">{mainPic.book_title}</p>
+              </div>
+            )}
           </div>
         </div>
       )}

@@ -10,6 +10,7 @@ export default function ArtCard({
   
   let cardLink = "";
   if (customLink) {
+    console.log(customLink)
     cardLink = customLink;
   } else if (stockId[0] === '3' || stockId[0] === '9') {
     cardLink = `/art/collage/${threeWords}--${stockId}`;

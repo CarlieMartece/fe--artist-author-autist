@@ -106,24 +106,24 @@ export default function Art() {
           value={selectedCategory}
           onChange={(e) => categoryUpdate(e)}
         >
-          <option value="314">Everything</option>
-          <option value="16">Visual Art</option>
-          <option value="1">Drawing</option>
-          <option value="2">Painting</option>
-          <option value="3">Collage</option>
-          <option value="4">Photography</option>
-          <option value="5">Digital</option>
-          <option value="6">Film</option>
+          <option key="314" value="314">Everything</option>
+          <option key="16" value="16">Visual Art</option>
+          <option key="1" value="1">Drawing</option>
+          <option key="2" value="2">Painting</option>
+          <option key="3" value="3">Collage</option>
+          <option key="4" value="4">Photography</option>
+          <option key="5" value="5">Digital</option>
+          <option key="6" value="6">Film</option>
         </select>
         <select
           className="searchSelect"
           value={selectedYear}
           onChange={(e) => yearUpdate(e)}
         >
-          <option value="314">Everywhen</option>
+          <option key="314" value="314">Everywhen</option>
           {years.map((year) => {
             return (
-            <option value={year}>{year}</option>
+            <option key={year} value={year}>{year}</option>
             );
           })}
           
@@ -133,10 +133,10 @@ export default function Art() {
           value={selectedColour}
           onChange={(e) => colourUpdate(e)}
         >
-          <option value="314">Colours</option>
+          <option key="314" value="314">Colours</option>
           {colours.map((colour) => {
             return (
-            <option value={colour}>{colour}</option>
+            <option key={colour} value={colour}>{colour}</option>
             );
           })}
           

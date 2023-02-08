@@ -30,6 +30,7 @@ export const fetchArtSingle = (art_id, idExtra) => {
 export const fetchArtCollage = (three_word_description) => {
   return api.get(`/art/collage/${three_word_description}`)
   .then((res) => {
+    console.log(res.data)
     return res.data;
   });
 };
