@@ -22,7 +22,7 @@ export default function Art() {
   }
   const [selectedColour, setSelectedColour] = useState("314");
   const [colourChanged, setColourChanged] = useState(false);
-  const colours = ["red", "orange", "yellow", "green", "blue", "indigo", "violet", "purple", "silver", "brown", "black", "white", "grey", "monochrome", "redblackwhite"]
+  const colours = ["black", "blue", "brown", "cream", "green", "grey", "orange", "peach", "pink", "purple", "red", "redblackwhite", "white", "yellow"]
 
   const categoryUpdate = (e) => {
     setSelectedCategory(e.target.value);
@@ -120,7 +120,7 @@ export default function Art() {
           value={selectedYear}
           onChange={(e) => yearUpdate(e)}
         >
-          <option value="314">All Time</option>
+          <option value="314">Everywhen</option>
           {years.map((year) => {
             return (
             <option value={year}>{year}</option>

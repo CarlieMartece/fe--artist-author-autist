@@ -44,7 +44,7 @@ export default function CodeSingle() {
               <p className="code_info">First launched: {launchDate}</p>
               <p className="code_info">Last Update: {update}</p>
               <p className="code_info">{data.project.further_info}</p>
-              <div id="code_tech">
+              <div className="code_tech">
                 <h3>Current stack:</h3>
                 <ul className="code_stack">
                   {data.project.tech_stack.map((element) => {

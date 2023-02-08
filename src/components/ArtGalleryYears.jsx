@@ -8,8 +8,8 @@ export default function ArtGalleryYears({ previousYear, category }) {
   const [previous, setPrevious] = useState(false);
   const [isError, setIsError] = useState(false);
   const year = previousYear;
-  console.log(`Yeargallery ${category}`)
-  console.log(`Yeargallery ${year}`)
+  // console.log(`Yeargallery ${category}`)
+  // console.log(`Yeargallery ${year}`)
 
   useEffect(() => {
     fetchArt(year, category)
