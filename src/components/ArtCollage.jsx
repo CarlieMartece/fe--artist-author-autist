@@ -28,7 +28,6 @@ export default function ArtCollage() {
   let picLink = "";
   if (!isLoading) {
     mainPic = data.collage[mainId];
-    console.log(mainPic);
     if (data.collage[stockIds[0]].close_ups) {
       closeUps = data.collage[stockIds[0]].close_ups.split(",");
     }
@@ -54,7 +53,7 @@ export default function ArtCollage() {
       ) : (
         <div id="ArtSingle">
           <div className="art__title">
-            <h2>{mainPic.art_title}</h2>
+            <h2>{data.collage[stockIds[0]].art_title}</h2>
             <span className="art__year">({year})</span>
           </div>
           <div className="art__pic">
@@ -102,7 +101,19 @@ export default function ArtCollage() {
             )}
             <p>Made from: {mainPic.made_from}</p>
             <p>Series: {data.collage[stockIds[0]].series_name}</p>
-            {data.collage[stockIds[0]].price === -1 ? <></> : <p>Price: £{data.collage[stockIds[0]].price}</p>}
+            {data.collage[stockIds[0]].price === -1 ? (
+              <></>
+            ) : (
+              <p>Price: £{data.collage[stockIds[0]].price}</p>
+            )}
+            {!mainPic.quote ? (
+              <></>
+            ) : (
+              <>
+                <p className="art__quote">"{mainPic.quote}"</p>
+                <p className="art__quote_source">{mainPic.book_title}</p>
+              </>
+            )}
             {mainPic.self_ref.length === 0 ? (
               <></>
             ) : (
@@ -116,14 +127,6 @@ export default function ArtCollage() {
                     />
                   </Link>
                 </p>
-              </div>
-            )}
-            {!mainPic.quote? (
-              <></>
-            ) : (
-              <div className="art__quote_and_source">
-                <p className="art__quote">"{mainPic.quote}"</p>
-                <p className="art__quote_source">{mainPic.book_title}</p>
               </div>
             )}
           </div>

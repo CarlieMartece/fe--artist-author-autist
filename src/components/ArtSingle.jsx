@@ -21,13 +21,13 @@ export default function ArtSingle() {
     const releaseDate = formatDate(data.art[0].completion);
     year = releaseDate.slice(-4);
     if (data.art[0].self_ref.length !== 0) {
-      if (data.art[0].self_ref[0][0] === '3') {
+      if (data.art[0].self_ref[0][0] === "3") {
         picLink = `/art/collage/${data.art[0].self_ref[2]}--${data.art[0].self_ref[0]}`;
       } else {
         picLink = `/art/${data.art[0].self_ref[1]}`;
-      };
-    };
-  };
+      }
+    }
+  }
 
   return (
     <main>
@@ -55,25 +55,25 @@ export default function ArtSingle() {
             ) : (
               <p>Price: £{data.art[0].price}</p>
             )}
+              <p className="art__quote">"{data.art[0].quote}"</p>
+              <p className="art__quote_source">{data.art[0].book_title}</p>
             {data.art[0].self_ref.length === 0 ? (
               <></>
             ) : (
               <>
-                See also:{" "}
-                <p>
-                  <Link className="art__close_up" to={picLink}>
-                    <img
-                      alt={data.art[0].alt_text}
-                      src={require(`../images/preview/${data.art[0].self_ref[0]}.jpg`)}
-                    />
-                  </Link>
-                </p>
+                <div className="art__self_link">
+                  See also:{" "}
+                  <p>
+                    <Link className="art__close_up" to={picLink}>
+                      <img
+                        alt={data.art[0].alt_text}
+                        src={require(`../images/preview/${data.art[0].self_ref[0]}.jpg`)}
+                      />
+                    </Link>
+                  </p>
+                </div>
               </>
             )}
-            <div className="art__quote_and_source">
-              <p className="art__quote">"{data.art[0].quote}"</p>
-              <p className="art__quote_source">{data.art[0].book_title}</p>
-            </div>
           </div>
         </div>
       )}

@@ -22,7 +22,7 @@ export default function Art() {
   }
   const [selectedColour, setSelectedColour] = useState("314");
   const [colourChanged, setColourChanged] = useState(false);
-  const colours = ["black", "blue", "brown", "cream", "green", "grey", "orange", "peach", "pink", "purple", "red", "redblackwhite", "white", "yellow"]
+  const colours = ["Black", "Blue", "Brown", "Cream", "Green", "Grey", "Orange", "Peach", "Pink", "Purple", "Rainbow", "Red", "Redblackwhite", "White", "Yellow"]
 
   const categoryUpdate = (e) => {
     setSelectedCategory(e.target.value);
@@ -41,7 +41,7 @@ export default function Art() {
   }
 
   const colourUpdate = (e) => {
-    setSelectedColour(e.target.value);
+    setSelectedColour(e.target.value.toLowerCase());
     setColourChanged(true);
     setSelectedYear("314");
     setYearChanged(false);
@@ -77,7 +77,7 @@ export default function Art() {
           <main>
             <div id="art__search_and_gallery">
               <>
-                <h2>Everything's {selectedColour}:</h2>
+                <h2>Everything's {selectedColour}...</h2>
                 <ArtGallery selectedColour={selectedColour} />
               </>
             </div>

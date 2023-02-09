@@ -33,10 +33,6 @@
   padding: 0;
 }
 
-.art__quote_and_source {
-  text-align: right;
-}
-
 .art__quote_source {
   color: #d6d6d6;
   margin: 0 auto;
@@ -47,7 +43,7 @@
 }
 
 .art__self_link {
-  margin: 5px 0 -10px;
+  margin: 5px 0 0;
 }
 
 .art__self_link img {
