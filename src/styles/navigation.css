@@ -1,10 +1,3 @@
-#ArtSearchBar {
-  color: white;
-  position: fixed;
-  top: 159px;
-  left: 10px;
-}
-
 .hexagon {
   border-right: 5px solid transparent;
   float: left;
@@ -70,11 +63,6 @@
 }
 
 @media screen and (min-width: 620px) {
-  #ArtSearchBar {
-    position: fixed;
-    top: 75px;
-    left: 341px;
-  }
   #NavSite {
     grid-area: 1 / 2 / 2 / 3;
     margin: 0;
