@@ -22,7 +22,7 @@
     #Introduction {
       display: grid;
       grid-template-columns: 420px 1fr;
-      grid-template-rows: 90px 620px;
+      grid-auto-rows: max-content;
       grid-column-gap: 20px;
       grid-row-gap: 0px;
     }

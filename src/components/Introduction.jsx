@@ -7,11 +7,7 @@ export default function Introduction() {
         <div id="short_intro">
           <h2>Introduction</h2>
           <p>
-            The Carlie Nooka Martece collective is a gender-fluid, autistic,
-            dissociative system working as a visual artist, alternative model,
-            and independently published writer. Since April 2022, their primary
-            autistic hyperfocus has been coding. This site is the first addition
-            to their <Link to={"/code"}>coding portfolio</Link>.
+            The Carlie Nooka Martece collective is a gender-fluid, autistic, dissociative system working as a <Link to={"/art"}>visual artist</Link>, alternative model, and independently  published <Link to={"/books"}>writer</Link>. Since April 2022, their primary autistic hyperfocus has been coding. This site is the first addition to their <Link to={"/code"}>coding portfolio</Link>.
           </p>
         </div>
 
@@ -26,16 +22,13 @@ export default function Introduction() {
         <div id="bio">
           <h3>Their Story</h3>
           <p>
-            In 1998, due to difficulties with verbal communication, they made
-            drawing and painting their main form of expression. Their eclectic
-            artwork was self-therapy while navigating this world as a disabled
-            human. Although most days they were convinced they were an alien.
+            In 1998, due to difficulties with verbal communication, they made drawing and painting their main form of expression. Their eclectic <Link to={"/art"}>artwork</Link> was self-therapy while navigating this world as a disabled human. Although most days they were convinced they were an alien.
           </p>
           <p>
             In 2013, they replaced autobiographical artwork with literary
             autobiography, before segueing into science fiction. A paracosm
             amplified by hyperphantasia became a strangely convincing fictional
-            universe. Their books now explore social issues and mental illness
+            universe. Their <Link to={"/books"}>books</Link> now explore social issues and mental illness
             using rapid-paced storytelling and brutally dark comedy. They have
             obliterated the former challenge of verbal communication and now
             deliver entertaining spoken word performances.
