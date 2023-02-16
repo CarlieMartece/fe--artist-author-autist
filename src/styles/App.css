@@ -137,6 +137,9 @@ main p {
     grid-template-columns: 314px 1fr;
     grid-template-rows: 120px 1fr;
   }
+  .gallery {
+    justify-content: left;
+  }
   main {
     grid-area: 2 / 1 / 3 / 3;
   }
