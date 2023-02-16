@@ -61,7 +61,7 @@
   border: 1px solid #a11025;
   font-weight: bold;
   height: 20px;
-  margin-right: 10px;
+  margin: 0 10px 5px 0;
 }
 
 @media screen and (min-width: 620px) {
