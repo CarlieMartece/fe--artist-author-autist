@@ -5,14 +5,13 @@ import ArtGallery from "./ArtGallery";
 export default function Art() {
   const [selectedCategory, setSelectedCategory] = useState("314");
   const categories = [
+    [16, "Visual Art"],
     [1, "Drawing"],
     [2, "Painting"],
     [3, "Collage"],
     [4, "Photography"],
     [5, "Digital"],
-    [6, "Film"],
-    [16, "Visual Art"],
-    [314, "Creations"],
+    [6, "Film"]
   ];
 
   const [selectedYear, setSelectedYear] = useState("314");
