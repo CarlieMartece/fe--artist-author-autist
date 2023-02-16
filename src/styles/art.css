@@ -1,7 +1,7 @@
 #Art {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 30px 1fr;
+  grid-auto-rows: max-content;
   margin: 0;
 }
 
@@ -51,7 +51,12 @@
 
 #ArtSearchBar {
   color: white;
-  grid-area: 1 / 1 / 2 / 2; 
+  display: flex;
+  flex: 1 1 0px;
+  flex-direction: row;
+  flex-wrap: wrap;
+  grid-area: 1 / 1 / 2 / 2;
+  justify-content: center;
 }
 
 .art__self_link {
@@ -96,6 +101,12 @@
   margin: 10px auto;
   max-width: 622px;
   width: 98%;
+}
+
+@media screen and (min-width: 620px) {
+  #ArtSearchBar {
+    justify-content: left;
+  }
 }
 
 @media screen and (min-width: 820px) {
