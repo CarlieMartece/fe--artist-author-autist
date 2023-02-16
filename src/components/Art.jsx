@@ -36,7 +36,7 @@ export default function Art() {
     "Purple",
     "Rainbow",
     "Red",
-    "Redblackwhite",
+    "RedBlackWhite",
     "White",
     "Yellow",
   ];
@@ -139,7 +139,7 @@ export default function Art() {
             onChange={(e) => colourUpdate(e)}
           >
             <option key="314" value="314">
-              Colours
+              All Colours
             </option>
             {colours.map((colour) => {
               return (
