@@ -19,7 +19,11 @@ export default function BookCard({
           />
         </div>
         <h2>{bookTitle}</h2>
-        <p>(Edition {bookEdition})</p>
+        {bookEdition !== 1 ? (
+          <p>(Edition {bookEdition})</p>
+        ) : (
+          <></>
+        )}
         <h4>{bookSeries} ({bookSequence})</h4>
       </li>
     </Link>
