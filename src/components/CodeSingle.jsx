@@ -46,7 +46,7 @@ export default function CodeSingle() {
               <p className="code_info">{data.project.further_info}</p>
               <div className="code_tech">
                 <h3>Current stack:</h3>
-                <ul className="code_stack">
+                <ul className="code_stack_logos">
                   {data.project.tech_stack.map((element) => {
                     return (
                       <li key={`${element} - key`}>

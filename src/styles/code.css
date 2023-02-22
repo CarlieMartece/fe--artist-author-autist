@@ -22,19 +22,26 @@
   margin-top: 10px;
 }
 
-.code_stack img {
+.code_stack_logos img {
   border: 1px solid #6b6b6b;
   margin: 0;
   padding: 5px;
   width: 50px;
 }
 
-.code_stack li {
+.code_stack_logos li {
+  display: inline;
+  float: left;
+  margin-bottom: 10px;
+  width: 85px;
+}
+
+.code_stack_text li {
   display: inline;
   float: left;
   font-size: 0.8em;
-  margin-bottom: 10px;
-  text-align: left;
+  margin: 7px 5px 0 0;
+  text-align: center;
   width: 85px;
 }
 

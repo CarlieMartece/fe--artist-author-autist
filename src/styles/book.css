@@ -44,10 +44,6 @@
   padding-bottom: 3px;
 }
 
-.bookPreview {
-  height: 390px;
-}
-
 .bookPreview h2,
 .bookPreview h4,
 .bookPreview p {
@@ -69,6 +65,12 @@
 
 .bookPreview h4 {
   margin: 10px auto;
+}
+
+@media screen and (min-width: 525px) {
+  .bookPreview {
+    height: 390px;
+  }
 }
 
 @media screen and (min-width: 620px) {

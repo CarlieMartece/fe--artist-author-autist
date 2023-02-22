@@ -24,7 +24,7 @@ export default function CodeCard({ projectId, stockId, name, update, stack }) {
             src={require(`../images/preview/${stockId}.jpg`)}
           />
         </div>
-        <ul className="code_stack">
+        <ul className="code_stack_text">
           {stack.map((element) => {
             return (
               <li key={element}>{element}</li>
